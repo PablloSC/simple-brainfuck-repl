@@ -14,7 +14,8 @@ int main(int argc, char **argv){
     printf("argv: %s\n", argv[i]);
   puts("------");
 
-  char *ascci_s = "abcdefgh";
+  /* cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html */
+  char *ascci_s = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
   ascci_table(ascci_s);
 
   return EXIT_SUCCESS;
@@ -46,3 +47,4 @@ char *chartobin (unsigned char c){
 
   return bin;
 }
+
