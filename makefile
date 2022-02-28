@@ -1,13 +1,14 @@
 all: comp exec
 
 comp:
-	tcc ./repl-bf.c -o repl-bf
+	cc -g repl-bf.c -o repl-bf
+	#tcc -g repl-bf.c -o repl-bf                         # <- u.u
 
 exec: comp
 	./repl-bf
 
-ascci: comp_ascci
-	./ascci | less
+debug: comp
+	gdb repl-bf
 
-comp_ascci:
-	tcc ./ascii.c -o ascci
+clean:
+	rm repl-bf
