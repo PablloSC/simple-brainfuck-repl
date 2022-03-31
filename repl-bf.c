@@ -15,20 +15,16 @@
 
 unsigned short cell = 0, loop_counter = 0, program_couter = 0;
 unsigned char tape[PROGRAM_SIZE], input[PROGRAM_SIZE];
-char loop = 1;
+int loop = 1;
 
-int main(void)
-{
-  while (loop)
-  {
+int main(void) {
+  while(loop) {
     printf("\nbranfuck[%u]: ", loop_counter);
     memset(input, 0, sizeof(input)); /* reset input */
     fgets(input, PROGRAM_SIZE, stdin);
 
-    for(unsigned int i = 0; i < PROGRAM_SIZE; i++)
-    {
-      switch (input[program_couter])
-      {
+    for(unsigned int i = 0; i < PROGRAM_SIZE; i++) {
+      switch(input[program_couter]) {
         case '+': tape[cell] += 1; break;
         case '-': tape[cell] -= 1; break;
         case '>': cell == PROGRAM_SIZE-1 ? cell = 0 : cell++; break;
